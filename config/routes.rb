@@ -1,6 +1,7 @@
 ArduinoWebcam::Application.routes.draw do
   root :to => "photos#index"
   match "index" => "index#new"
+  match "/show/:id" => "photos#show"
   resources :photos do
     post 'upload', :on => :collection
   end
